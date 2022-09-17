@@ -1,4 +1,5 @@
-window.onload = () => {
+window.onload = loadAnimation()
+function loadAnimation() {
     const animationDirections = ['right', 'left', 'top', 'bottom', 'center']
     animationDirections.forEach(direction => {
         addOnscrollSlideAmimation(direction, '');
@@ -6,9 +7,7 @@ window.onload = () => {
         addOnscrollSlideAmimation(direction, 'fast')
     })
 }
-
 function addOnscrollSlideAmimation(direction, speed) {
-    console.log(direction, speed);
     const animationClass = speed ? `ss-${direction}-${speed}` : `ss-${direction}`;
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
