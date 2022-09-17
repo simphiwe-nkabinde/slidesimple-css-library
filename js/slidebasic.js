@@ -1,6 +1,6 @@
 window.onload = () => {
-    const AnimationDirections = ['right', 'left', 'top', 'bottom', 'center']
-    AnimationDirections.forEach(direction => {
+    const animationDirections = ['right', 'left', 'top', 'bottom', 'center']
+    animationDirections.forEach(direction => {
         addOnscrollSlideAmimation(direction, '');
         addOnscrollSlideAmimation(direction, 'slow');
         addOnscrollSlideAmimation(direction, 'fast')
@@ -8,7 +8,8 @@ window.onload = () => {
 }
 
 function addOnscrollSlideAmimation(direction, speed) {
-    const animationClass = speed ? `sb-${direction}-${speed}` : `sb-${direction}`;
+    console.log(direction, speed);
+    const animationClass = speed ? `ss-${direction}-${speed}` : `ss-${direction}`;
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -18,7 +19,7 @@ function addOnscrollSlideAmimation(direction, speed) {
         });
     }, { threshold: 0.5 })
 
-    const onscrollAnimationClass = speed ? `.sb-onscroll-${direction}-${speed}` : `.sb-onscroll-${direction}`;
+    const onscrollAnimationClass = speed ? `.ss-onscroll-${direction}-${speed}` : `.ss-onscroll-${direction}`;
     document.querySelectorAll(onscrollAnimationClass)
         .forEach(element => {
             observer.observe(element)
