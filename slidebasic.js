@@ -1,4 +1,4 @@
-window.onload = loadAnimation()
+window.onload = () => (loadAnimation());
 function loadAnimation() {
     const animationDirections = ['right', 'left', 'top', 'bottom', 'center']
     animationDirections.forEach(direction => {
