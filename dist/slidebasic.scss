@@ -1,0 +1,87 @@
+$slow: 2s;
+$normal: 1s;
+$fast: .5s;
+
+@mixin animate($keyframe, $duration) {
+    animation: $keyframe $duration forwards
+}
+// RIGHT
+.sb-right {
+    @include animate(sb-right, $normal)
+}
+.sb-right-slow {
+    @include animate(sb-right, $slow)
+}
+.sb-right-fast {
+    @include animate(sb-right, $fast)
+}
+@keyframes sb-right {
+    0% {
+        opacity: 0.1;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+// LEFT
+.sb-left {
+    @include animate(sb-left, $normal)
+}
+.sb-left-slow {
+    @include animate(sb-left, $slow)
+}
+.sb-left-fast {
+    @include animate(sb-left, $fast)
+}
+@keyframes sb-left {
+    0% {
+        opacity: 0.1;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+// BOTTOM
+.sb-bottom {
+    @include animate(sb-bottom, $normal)
+}
+.sb-bottom-slow {
+    @include animate(sb-bottom, $slow)
+}
+.sb-bottom-fast {
+    @include animate(sb-bottom, $fast)
+}
+@keyframes sb-bottom {
+    0% {
+        opacity: 0.1;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+// TOP
+.sb-top {
+    @include animate(sb-top, $normal)
+}
+.sb-top-slow {
+    @include animate(sb-top, $slow)
+}
+.sb-top-fast {
+    @include animate(sb-top, $fast)
+}
+@keyframes sb-top {
+    0% {
+        opacity: 0.1;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
