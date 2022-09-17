@@ -5,17 +5,23 @@ $fast: .5s;
 @mixin animate($keyframe, $duration) {
     animation: $keyframe $duration forwards
 }
+.ss-onscroll-right, .ss-onscroll-right-slow, .ss-onscroll-right-fast,
+.ss-onscroll-left, .ss-onscroll-left-slow, .ss-onscroll-left-fast,
+.ss-onscroll-top, .ss-onscroll-top-slow, .ss-onscroll-top-fast,
+.ss-onscroll-bottom, .ss-onscroll-bottom-slow, .ss-onscroll-bottom-fast {
+    visibility: hidden;
+}
 // RIGHT
-.sb-right {
-    @include animate(sb-right, $normal)
+.ss-right {
+    @include animate(ss-right, $normal)
 }
-.sb-right-slow {
-    @include animate(sb-right, $slow)
+.ss-right-slow {
+    @include animate(ss-right, $slow)
 }
-.sb-right-fast {
-    @include animate(sb-right, $fast)
+.ss-right-fast {
+    @include animate(ss-right, $fast)
 }
-@keyframes sb-right {
+@keyframes ss-right {
     0% {
         opacity: 0.1;
         transform: translateX(-30px);
@@ -26,16 +32,16 @@ $fast: .5s;
     }
 }
 // LEFT
-.sb-left {
-    @include animate(sb-left, $normal)
+.ss-left {
+    @include animate(ss-left, $normal)
 }
-.sb-left-slow {
-    @include animate(sb-left, $slow)
+.ss-left-slow {
+    @include animate(ss-left, $slow)
 }
-.sb-left-fast {
-    @include animate(sb-left, $fast)
+.ss-left-fast {
+    @include animate(ss-left, $fast)
 }
-@keyframes sb-left {
+@keyframes ss-left {
     0% {
         opacity: 0.1;
         transform: translateX(30px);
@@ -46,16 +52,16 @@ $fast: .5s;
     }
 }
 // BOTTOM
-.sb-bottom {
-    @include animate(sb-bottom, $normal)
+.ss-bottom {
+    @include animate(ss-bottom, $normal)
 }
-.sb-bottom-slow {
-    @include animate(sb-bottom, $slow)
+.ss-bottom-slow {
+    @include animate(ss-bottom, $slow)
 }
-.sb-bottom-fast {
-    @include animate(sb-bottom, $fast)
+.ss-bottom-fast {
+    @include animate(ss-bottom, $fast)
 }
-@keyframes sb-bottom {
+@keyframes ss-bottom {
     0% {
         opacity: 0.1;
         transform: translateY(-30px);
@@ -66,16 +72,16 @@ $fast: .5s;
     }
 }
 // TOP
-.sb-top {
-    @include animate(sb-top, $normal)
+.ss-top {
+    @include animate(ss-top, $normal)
 }
-.sb-top-slow {
-    @include animate(sb-top, $slow)
+.ss-top-slow {
+    @include animate(ss-top, $slow)
 }
-.sb-top-fast {
-    @include animate(sb-top, $fast)
+.ss-top-fast {
+    @include animate(ss-top, $fast)
 }
-@keyframes sb-top {
+@keyframes ss-top {
     0% {
         opacity: 0.1;
         transform: translateY(30px);
@@ -83,5 +89,25 @@ $fast: .5s;
     100% {
         opacity: 1;
         transform: translateY(0px);
+    }
+}
+// CENTER
+.ss-center {
+    @include animate(ss-center, $normal)
+}
+.ss-center-slow {
+    @include animate(ss-center, $slow)
+}
+.ss-center-fast {
+    @include animate(ss-center, $fast)
+}
+@keyframes ss-center {
+    0% {
+        opacity: 0.1;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale((1));
     }
 }
